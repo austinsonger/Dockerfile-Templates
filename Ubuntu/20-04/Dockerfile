@@ -18,12 +18,11 @@ RUN apt-get update && \
         git ca-certificates \
         build-essential vim \
         cmake zlib1g zlib1g-dev \
-        # (optional) python3-dev python3 python3-pip python3-setuptools \
+        python3-dev python3 python3-pip python3-setuptools \
         && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# (optional) install necessary python packages
-# RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade pip
 # RUN pip3 install <package-name>
 
 ARG USER=template-user
